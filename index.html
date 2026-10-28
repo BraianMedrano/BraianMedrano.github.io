@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Braian Josué Medrano: software developer, full-stack, infrastructure and QA. Portfolio.">
+<title>Braian Josué Medrano · Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+html{scroll-behavior:auto}
+body{margin:0;background:#fff;color:#22211e;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}a:hover{text-decoration:underline;text-underline-offset:3px}
+</style>
+</head>
+<body>
+<div style="font-family:'Hanken Grotesk',sans-serif;font-size:17px;line-height:1.6;color:#22211e">
+
+<header data-screen-label="Hero" style="background:#1b1d22;color:#f4f3f0;padding:88px 0 64px">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<h1 style="margin:0;font-size:clamp(38px,6vw,60px);line-height:1.02;font-weight:700;letter-spacing:-.025em">Braian Josué Medrano</h1>
+<div style="font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.4;color:oklch(0.82 0.11 165);text-wrap:pretty">Software Developer · Full-stack, infrastructure &amp; QA · Information Systems Engineering student</div>
+<p style="margin:6px 0 0;max-width:720px;font-size:18px;line-height:1.6;color:#dcdad4;text-wrap:pretty">Fourth-year student at UTN FRT. I lead the development of Palestra, a multi-tenant booking platform for sports clubs, across product, code, infrastructure and testing in real environments.</p>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:10px 28px;font-size:16px;font-weight:600">
+<a href="https://github.com/BraianMedrano" style="color:#f4f3f0">GitHub</a>
+<a href="https://linkedin.com/in/braian-medrano-765a741a7" style="color:#f4f3f0">LinkedIn</a>
+<a href="cv.pdf" style="color:#f4f3f0">CV (PDF)</a>
+<span style="font-weight:400;color:#c9c7c1">Tucumán, Argentina</span>
+</div>
+<nav style="display:flex;flex-wrap:wrap;gap:8px 22px;padding-top:22px;border-top:1px solid #34373e;font-size:15px;color:#c9c7c1">
+<a href="#palestra">Palestra</a>
+<a href="#safari">Safari session bug</a>
+<a href="#deploy">First real deploy</a>
+<a href="#security">Security review</a>
+<a href="#infrastructure">Infrastructure</a>
+<a href="#testing">Testing</a>
+<a href="#gestor">Gestor Académico</a>
+</nav>
+</div>
+</header>
+
+<section id="palestra" data-screen-label="Palestra" style="padding:96px 0">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Palestra · What it is and my role</span><span style="flex:1;height:1px;background:#e2e0da"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">A booking platform each club runs under its own subdomain</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">A white-label, multi-tenant SaaS for sports clubs, built by a team of four. Next.js and TypeScript on the frontend, a Go API and PostgreSQL.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:40px 56px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-size:18px;font-weight:600">The product</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;text-wrap:pretty">
+<li>Each club gets its own subdomain, and its data is kept separate from other clubs.</li>
+<li>Sign-in with email and password or Google. Sessions live on the server, in PostgreSQL; the browser only holds an opaque, HttpOnly cookie.</li>
+<li>Auth calls go through a small server layer inside the Next.js app (a BFF), so the browser never handles auth tokens.</li>
+<li>Booking, payment and sign-up from end to end are still in progress.</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-size:18px;font-weight:600">My role: founder and technical lead</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;text-wrap:pretty">
+<li>Defined the product: a white-label SaaS for each club instead of a marketplace.</li>
+<li>Set up how the team works: backlog, a GitHub Projects board, issue templates and review rules.</li>
+<li>Main code reviewer for both repositories, web and API.</li>
+<li>We work in small, spec-based iterations (Organic-Driven Development). Code is written with AI assistance, and every change is reviewed and verified before it's merged.</li>
+</ul>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:20px">
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:min(100%,260px)"><div style="position:relative;overflow:hidden;border-radius:16px;width:100%;aspect-ratio:9/19.5;background:#f6f5f1"><img src="img/palestra-home-mobile.webp" alt="Palestra mobile: club home" loading="lazy" style="position:absolute;left:50.000%;top:175.666%;width:100.000%;height:351.124%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Club home on mobile. Each club lives on its own subdomain.</figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:min(100%,260px)"><div style="position:relative;overflow:hidden;border-radius:16px;width:100%;aspect-ratio:9/19.5;background:#f6f5f1"><img src="img/palestra-booking-mobile.webp" alt="Palestra mobile: booking" loading="lazy" style="position:absolute;left:50.000%;top:51.383%;width:100.000%;height:102.706%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Booking, step 1: sport, day and time.</figcaption></figure>
+</div>
+
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;max-width:560px">
+<div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:16/10;background:#f6f5f1"><img src="img/palestra-home-desktop.webp" alt="Palestra desktop: club home (optional)" loading="lazy" style="position:absolute;left:50.000%;top:110.800%;width:100.000%;height:221.599%;transform:translate(-50%,-50%);max-width:none;display:block"></div>
+<figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Desktop: the same club page on a larger screen. The app is designed mobile-first.</figcaption></figure>
+
+</div>
+
+</div>
+</section>
+
+<section id="safari" data-screen-label="Safari case" style="padding:96px 0;background:#f6f5f1">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Case 01 · Bug report</span><span style="flex:1;height:1px;background:#dcd9d2"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">Safari on iPhone forgets the session</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">Found while testing sign-in on a real iPhone. The session cookie had no expiry, so Safari could treat it as temporary. The fix spans two repos and had to ship in a specific order.</p>
+
+<div style="display:flex"><span style="display:flex;align-items:center;gap:8px;border:1px solid oklch(0.45 0.1 165);border-radius:999px;padding:4px 14px;font-size:14px;font-weight:600;color:oklch(0.45 0.1 165)"><span style="width:7px;height:7px;border-radius:50%;background:oklch(0.45 0.1 165)"></span>Verified</span></div>
+
+
+</div>
+
+<div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e2e0da;border-radius:8px;padding:8px clamp(18px,4vw,28px)">
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Issues and PRs</div>
+<div style="flex:1 1 300px;min-width:0">Issues web#188 and api#239 · PRs web#245 and api#280</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Environment</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Test environment on our VPS, behind Cloudflare and Nginx (there's no production yet). Real iPhone, Safari on iOS.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Steps</div>
+<ol style="flex:1 1 300px;min-width:0;margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px">
+<li>Sign in on a club's subdomain in Safari on iPhone.</li>
+<li>Close Safari completely.</li>
+<li>Reopen it and go back to the club's site.</li>
+</ol>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Expected</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Still signed in. The server keeps the session valid for up to 30 days.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Actual</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Sometimes signed out and sent back to the login screen.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Evidence</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;min-width:0">
+<div style="font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.55;background:#f6f5f1;border-radius:6px;padding:12px 14px;overflow-x:auto;white-space:pre">Set-Cookie: __Host-palestra_session=&lt;token&gt;; Path=/; HttpOnly; Secure; SameSite=Lax</div>
+<div style="color:#55534d;text-wrap:pretty">No <span style="font-family:'IBM Plex Mono',monospace;font-size:15px">Expires</span>, no <span style="font-family:'IBM Plex Mono',monospace;font-size:15px">Max-Age</span>.</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Root cause</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Without an expiry, the browser treats the cookie as a session cookie and may drop it when the browser closes. The session on the server outlives the cookie that points to it.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Fix plan</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:8px;text-wrap:pretty">
+<div><strong style="font-weight:600">web#245</strong> (issue web#188): the BFF checks every <span style="font-family:'IBM Plex Mono',monospace;font-size:15px">Set-Cookie</span> it relays from the API. It has to accept the expiry attribute first.</div>
+<div><strong style="font-weight:600">api#280</strong> (issue api#239): the API sends the cookie with an expiry that matches the server session.</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Release order</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;text-wrap:pretty">
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font-weight:600"><span style="border:1px solid #d6d4ce;border-radius:6px;padding:3px 10px">1 · Deploy web#245</span><span style="color:#8a877f">then</span><span style="border:1px solid #d6d4ce;border-radius:6px;padding:3px 10px">2 · Deploy api#280</span></div>
+<div>If the API change went out first, the BFF would reject the new cookie without logging anything, and nobody could sign in. After step 1, I checked Google sign-in in Safari on iOS against the old API before releasing step 2.</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Status</div>
+
+
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px">
+<div style="text-wrap:pretty">Verified on Oct 27, 2026 in the test environment. The session survives closing and reopening the browser in Safari on iOS and in Chrome, Brave, Edge and Firefox on Android. Logout still works in all of them.</div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.55;background:#f6f5f1;border-radius:6px;padding:12px 14px;overflow-x:auto;white-space:pre">__Host-palestra_session
+Host-only · Path=/
+Created: Wed, 28 Oct 2026 01:38:12 GMT
+Expires: Fri, 27 Nov 2026 01:38:11 GMT
+HttpOnly · Secure · SameSite=Lax</div>
+<div style="color:#55534d;text-wrap:pretty">After the fix, as shown by Firefox's cookie inspector on macOS: the cookie now expires 30 days after sign-in. <a href="https://github.com/Castle-Leads/palestra-api/issues/239#issuecomment-6458688590" style="text-decoration:underline;text-underline-offset:3px">Verification notes on api#239</a></div>
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%;max-width:300px"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:1290/2796;background:#f6f5f1"><img src="img/safari-iphone.webp" alt="iPhone: still signed in after reopening Safari" loading="lazy" style="position:absolute;left:50.000%;top:50.000%;width:100.000%;height:99.988%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Still signed in after closing and reopening Safari on iPhone.</figcaption></figure>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="deploy" data-screen-label="First deploy" style="padding:96px 0">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Case 02 · First real deploy</span><span style="flex:1;height:1px;background:#e2e0da"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">Three bugs the mocks couldn't show</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">Sign-in was tested against a controlled API stub. Once it ran behind Cloudflare and Nginx, three bugs showed up that the stub had no way to reproduce.</p>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:24px 0;border-top:1px solid #e2e0da">
+<div style="font-size:15px;font-weight:700;color:oklch(0.45 0.1 165)">01</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline"><h3 style="margin:0;font-size:19px;font-weight:600">The origin check failed behind Nginx</h3><span style="font-size:14px;color:oklch(0.45 0.1 165);font-weight:600">Fixed · web#237</span></div>
+<div style="text-wrap:pretty">Behind the TLS proxy, Next.js 16 built <span style="font-family:'IBM Plex Mono',monospace;font-size:15px">request.url</span> from its internal bind address (<span style="font-family:'IBM Plex Mono',monospace;font-size:15px">https://0.0.0.0:3000</span>), so the BFF's origin check rejected login, session and logout with <span style="font-family:'IBM Plex Mono',monospace;font-size:15px">403 origin_invalid</span>. Until then, the test environment relied on a workaround that tied each container to a single club. The fix accepts Next's internal host behind the proxy, and the workaround was removed from the server.</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:24px 0;border-top:1px solid #e2e0da">
+<div style="font-size:15px;font-weight:700;color:oklch(0.45 0.1 165)">02</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline"><h3 style="margin:0;font-size:19px;font-weight:600">Google's callback carried extra parameters</h3><span style="font-size:14px;color:oklch(0.45 0.1 165);font-weight:600">Fixed · web#185</span></div>
+<div style="text-wrap:pretty">The real callback from Google included query parameters the stub never sent. Our parser rejected them, so Google sign-in failed.</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:4px 16px;padding:24px 0;border-top:1px solid #e2e0da;border-bottom:1px solid #e2e0da">
+<div style="font-size:15px;font-weight:700;color:oklch(0.45 0.1 165)">03</div>
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:baseline"><h3 style="margin:0;font-size:19px;font-weight:600">The session cookie had no expiry</h3><span style="font-size:14px;color:#6b6862">Verified</span></div>
+<div style="text-wrap:pretty">Safari on iPhone signed users out after closing the browser. Full report in <a href="#safari" style="text-decoration:underline;text-underline-offset:3px">Case 01</a>.</div>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px 56px">
+<h3 style="margin:0;font-size:18px;font-weight:600">How I diagnosed them</h3>
+<div style="display:flex;flex-direction:column;gap:10px;text-wrap:pretty">
+<p style="margin:0">Nginx logs showed what each request looked like by the time it reached the server, which is exactly what the stub had been hiding.</p>
+<p style="margin:0">Where the behavior depended on the framework, I read the Next.js source code to see how it handles the request.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="security" data-screen-label="Security review" style="padding:96px 0;background:#f6f5f1">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Case 03 · Security review</span><span style="flex:1;height:1px;background:#dcd9d2"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">A login CSRF, stopped in code review</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">In the Google sign-in work, the OAuth state wasn't tied to the browser that started the login. I blocked the PR until it was, so the hole was never merged.</p>
+</div>
+<div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e2e0da;border-radius:8px;padding:8px clamp(18px,4vw,28px)">
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Reference</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">palestra-api#174, a teammate's PR. My part was the review.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Risk</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">An attacker could start a Google login with their own account and get someone else's browser to finish it. That person would end up signed in to the attacker's account without noticing.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">What changed</div>
+<div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:10px;min-width:0">
+<div style="text-wrap:pretty">The state now lives in a short-lived, host-only cookie in the browser that started the login. The callback is rejected unless it matches.</div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.55;background:#f6f5f1;border-radius:6px;padding:12px 14px;overflow-x:auto;white-space:pre">Set-Cookie: __Host-palestra_google_state=&lt;state&gt;; Path=/; Max-Age=600; HttpOnly; Secure; SameSite=Lax</div>
+</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Status</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Fixed before merge. I requested changes, then approved the corrected version and merged it.</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="infrastructure" data-screen-label="Infrastructure" style="padding:96px 0">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Infrastructure</span><span style="flex:1;height:1px;background:#e2e0da"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">One server, only reachable through Cloudflare</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">I set up and run the server: an Ubuntu VPS with Docker Compose. Public traffic goes through Cloudflare, and the database is never exposed.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px 56px;align-items:start">
+<div style="display:flex;flex-direction:column;align-items:stretch;font-size:15px;line-height:1.4">
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Browser</span><span style="color:#6b6862">club.domain, one subdomain per club</span></div>
+<div style="display:flex;justify-content:center"><span style="width:1px;height:24px;background:#9b988f"></span></div>
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 16px;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Cloudflare</span><span style="color:#6b6862">DNS and HTTPS proxy</span></div>
+<div style="display:flex;flex-direction:column;align-items:center"><span style="width:1px;height:14px;background:#9b988f"></span><span style="font-size:13px;font-weight:600;color:oklch(0.45 0.1 165);padding:2px 0">Firewall: Cloudflare traffic only</span><span style="width:1px;height:14px;background:#9b988f"></span></div>
+<div style="border:1px dashed #9b988f;border-radius:10px;padding:14px;display:flex;flex-direction:column;background:#f6f5f1">
+<div style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b6862;padding:0 2px 10px">Ubuntu VPS · Docker Compose</div>
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 16px;background:#fff;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">Nginx</span><span style="color:#6b6862">TLS and reverse proxy</span></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)"><div style="display:flex;justify-content:center"><span style="width:1px;height:22px;background:#9b988f"></span></div><div style="display:flex;justify-content:center"><span style="width:1px;height:22px;background:#9b988f"></span></div></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center">
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 14px;background:#fff;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">web</span><span style="color:#6b6862">Next.js + BFF</span></div>
+<span style="height:1px;background:#9b988f"></span>
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 14px;background:#fff;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">api</span><span style="color:#6b6862">Go</span></div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)"><span></span><div style="display:flex;justify-content:center"><span style="width:1px;height:22px;background:#9b988f"></span></div></div>
+<div style="border:1px solid #d6d4ce;border-radius:6px;padding:12px 16px;background:#fff;display:flex;flex-direction:column;gap:2px"><span style="font-size:16px;font-weight:600">PostgreSQL</span><span style="color:#6b6862">Private network, not exposed</span></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid #e2e0da"><h3 style="margin:0;font-size:17px;font-weight:600">Edge</h3><div style="color:#55534d;text-wrap:pretty">Cloudflare handles DNS and HTTPS for every club subdomain. The server's firewall only accepts traffic coming from Cloudflare.</div></div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid #e2e0da"><h3 style="margin:0;font-size:17px;font-weight:600">Server</h3><div style="color:#55534d;text-wrap:pretty">Nginx terminates TLS and routes to the web and API containers. The BFF relays auth calls to the API. PostgreSQL sits on a private network. Secrets live outside the code.</div></div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid #e2e0da"><h3 style="margin:0;font-size:17px;font-weight:600">Email</h3><div style="color:#55534d;text-wrap:pretty">Transactional email through Resend, with SPF, DKIM and DMARC set up, plus mailbox forwarding for the domain.</div></div>
+<div style="display:flex;flex-direction:column;gap:4px;padding:16px 0;border-top:1px solid #e2e0da;border-bottom:1px solid #e2e0da"><h3 style="margin:0;font-size:17px;font-weight:600">Releases</h3><div style="color:#55534d;text-wrap:pretty">Images are published to GitHub Container Registry. Deploys are manual for now; there's no continuous deployment yet.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="testing" data-screen-label="Testing" style="padding:96px 0;background:#f6f5f1">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Testing</span><span style="flex:1;height:1px;background:#dcd9d2"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">How Palestra is tested</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">Every pull request runs lint, type checks and tests on GitHub Actions in both repos. Before a feature ships, I also try it by hand on real devices.</p>
+</div>
+<div style="display:flex;flex-direction:column;background:#fff;border:1px solid #e2e0da;border-radius:8px;padding:8px clamp(18px,4vw,28px)">
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Unit</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Vitest on the web app, Go tests on the API.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Integration</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Go tests against a real PostgreSQL database in CI.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">End-to-end</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">Playwright against a production build served over HTTPS, with a controlled API stub. Traces are kept when a test fails. Chromium in CI.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Smoke</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">A suite that calls the real API, not a mock.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Contract</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">CI checks that the API and its OpenAPI spec haven't drifted apart.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:4px 28px;padding:18px 0;border-top:1px solid #e2e0da">
+<div style="flex:0 0 160px;font-size:15px;font-weight:600;color:#55534d">Manual</div>
+<div style="flex:1 1 300px;min-width:0;text-wrap:pretty">New features tried by hand on real devices and browsers before they ship. That's how the Safari bug was found.</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:20px">
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:16/9;background:#fff"><img src="img/ci-web.webp" alt="CI run, palestra-web: all checks green" loading="lazy" style="position:absolute;left:65.290%;top:50.000%;width:130.580%;height:100.000%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">palestra-web, PR #245 (web side of the cookie fix): lint, typecheck, unit tests, build and Playwright E2E, all green.</figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:16/9;background:#fff"><img src="img/ci-api.webp" alt="CI run, palestra-api: all checks green" loading="lazy" style="position:absolute;left:57.509%;top:50.000%;width:115.018%;height:100.000%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">palestra-api, PR #280 (API side of the cookie fix): formatting, Go tests, smoke tests, OpenAPI contract drift, Docker image build and Compose config checks, all green.</figcaption></figure>
+</div>
+
+</div>
+</section>
+
+<section id="gestor" data-screen-label="Gestor Académico" style="padding:96px 0">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px"><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Side project · Sep – Oct 2026</span><span style="flex:1;height:1px;background:#e2e0da"></span></div>
+<h2 style="margin:0;font-size:clamp(28px,4vw,38px);line-height:1.12;font-weight:700;letter-spacing:-.02em;text-wrap:balance">Gestor Académico</h2>
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#55534d;text-wrap:pretty">A local-first web app for UTN students. It imports SysAcad pages without asking for credentials and shows what you can take next, and when.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:32px 48px">
+<div style="display:flex;flex-direction:column;gap:10px">
+<h3 style="margin:0;font-size:18px;font-weight:600">What it is</h3>
+<div style="color:#55534d;text-wrap:pretty">Your data stays in your browser. You import your own SysAcad pages; the app never asks for your login. Hexagonal architecture keeps the academic rules and the page parser separate from the UI.</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<h3 style="margin:0;font-size:18px;font-weight:600">What it does</h3>
+<ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:#55534d;text-wrap:pretty">
+<li>Prerequisite map for the whole degree</li>
+<li>Schedule finder with no time clashes</li>
+<li>Export to a calendar (.ics)</li>
+<li>Finals and progress tracking</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px">
+<h3 style="margin:0;font-size:18px;font-weight:600">Quality and deploy</h3>
+<div style="color:#55534d;text-wrap:pretty">Vitest tests for the rules and the parser, CI on GitHub Actions, and deploys to Netlify.</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:24px 56px;background:#f6f5f1;border-radius:8px;padding:28px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:oklch(0.45 0.1 165)">Design decision</span>
+<h3 style="margin:0;font-size:20px;font-weight:600;line-height:1.3">Promotions are marked by hand, and the mark survives reimports</h3>
+</div>
+<div style="text-wrap:pretty">Whether a course was passed by promotion is something the student marks. When the SysAcad pages are imported again, that mark is kept instead of overwritten, so a reimport never undoes what the student entered.</div>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px">
+<span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b6862">Roadmap</span>
+<span style="color:#55534d">Installable PWA with offline support. Planned, not built yet.</span>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:28px">
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:3/2;background:#f6f5f1"><img src="img/gestor-plan.webp" alt="Gestor: prerequisite map" loading="lazy" style="position:absolute;left:50.000%;top:50.000%;width:100.000%;height:100.980%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Study plan as a prerequisite map: select a course to see what it requires and what it unlocks.</figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:16/10;background:#f6f5f1"><img src="img/gestor-combinations.webp" alt="Gestor: schedule finder, combinations found" loading="lazy" style="position:absolute;left:50.000%;top:51.689%;width:100.000%;height:135.956%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Schedule finder: lock the sections you want to keep, and it lists combinations with no time clashes, fewest gaps first.</figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:8px;min-width:0;width:100%"><div style="position:relative;overflow:hidden;border-radius:8px;width:100%;aspect-ratio:16/9;background:#f6f5f1"><img src="img/gestor-week.webp" alt="Gestor: weekly preview of a combination" loading="lazy" style="position:absolute;left:50.000%;top:50.000%;width:109.239%;height:100.000%;transform:translate(-50%,-50%);max-width:none;display:block"></div><figcaption style="font-size:14px;line-height:1.45;color:#6b6862;text-wrap:pretty">Weekly preview of the chosen combination. Dashed blocks are the sections that change from your current schedule.</figcaption></figure>
+</div>
+
+</div>
+</section>
+
+<footer style="background:#1b1d22;color:#f4f3f0;padding:56px 0">
+<div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:16px 32px">
+<span style="font-size:20px;font-weight:700;letter-spacing:-.01em">Braian Josué Medrano</span>
+<div style="display:flex;flex-wrap:wrap;gap:8px 24px;font-size:15px;color:#c9c7c1">
+<a href="mailto:braian_medrano@hotmail.com">braian_medrano@hotmail.com</a>
+<a href="tel:+543812502185">+54 381 250-2185</a>
+<a href="https://linkedin.com/in/braian-medrano-765a741a7">LinkedIn</a>
+<a href="https://github.com/BraianMedrano">GitHub</a>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
